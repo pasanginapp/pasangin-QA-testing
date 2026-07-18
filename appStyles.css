@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #333;
+}
+
+/* ========== HEADER ========== */
+.header {
+    background: transparent;
+    padding: 20px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-image {
+    height: 30px;      /* sesuaikan tinggi logo */
+    width: auto;       /* biar proporsional */
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5757;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Gambar banner — tidak full, ada jarak 60px dari kiri & kanan */
+.banner-image {
+width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.banner-content{
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  color: #fff;
+  padding-top: 100px; /* Sesuaikan jarak dari atas */
+  padding-left: 100px; /* Sesuaikan jarak dari kiri */
+  max-width: 900px; /* Membatasi lebar konten */
+}
+
+/* Container Utama di Kiri Bawah */
+.mockup-showcase {
+  margin-top: 100px;
+  width: fit-content;
+  display: inline-block;
+}
+
+/* Area Stack Kartu */
+.cards-stack {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 420px; /* Lebar area ketika bertumpuk */
+  height: 240px;
+  padding-left: 350px; /* Memberi ruang untuk kartu kiri */
+  transition: width 0.4s ease;
+}
+
+/* Perilaku komponen dasar kartu */
+.mockup-card {
+  position: absolute;
+  width: 200px; /* Ukuran kartu disesuaikan agar proporsional di banner */
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.1s;
+  background-color: #fff;
+}
+
+.mockup-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- POSISI AWAL (BERTUMPUK & MIRING seperti gambar 3) --- */
+.card-left {
+  transform: translateX(-100px) rotate(-15deg);
+  z-index: 1;
+}
+
+.card-center {
+  transform: translateX(0) translateY(20px) rotate(5deg);
+  z-index: 3; /* Tengah berada di paling depan */
+}
+
+.card-right {
+  transform: translateX(100px) rotate(15deg);
+  z-index: 2;
+}
+
+
+/* --- EFEK HOVER (MENYEBAR & SEJAJAR RATA seperti gambar 2) --- */
+.cards-stack:hover {
+  width: 460px; /* Memperlebar container agar kartu menyebar */
+}
+
+.cards-stack:hover .card-left {
+  transform: translateX(-210px) rotate(0deg);
+  z-index: 4;
+}
+
+.cards-stack:hover .card-center {
+  transform: translateX(0px) rotate(0deg);
+  z-index: 4;
+}
+
+.cards-stack:hover .card-right {
+  transform: translateX(210px) rotate(0deg);
+  z-index: 4;
+}
+
+/* Efek angkat sedikit ketika salah satu kartu di-hover secara spesifik */
+.mockup-card:hover {
+  z-index: 10 !important;
+  outline: 5px solid #fff;
+}
+
+
+/* ==========================================
+   CSS LIGHTBOX (FULL SCREEN VIEW)
+   ========================================== */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Memunculkan Lightbox */
+.lightbox-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-content {
+  transform: scale(1);
+}
+
+/* Tombol Close silang di pojok */
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+  color: #C20D00;
+}
+
+.btn-download{
+    background: #C20D00;
+    color: #ffffff;
+    padding: 8px 20px;
+    border: 2px solid #C20D00;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-download:hover {
+    background: #ffffff;
+    color: #C20D00;
+    border: 2px solid #fff;
+}

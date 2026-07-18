@@ -1,0 +1,294 @@
+/* Reset Dasar & Font global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mengunci tinggi halaman penuh layar */
+.login-page-body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.login-container {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: right; /* Memposisikan kartu form di tengah secara horizontal */
+  align-items: center;     /* Memposisikan kartu form di tengah secara vertikal */
+}
+
+/* ==========================================
+   SISI KIRI: BACKGROUND DAN TEKS
+   ========================================== */
+.logo-image{
+    width: auto;
+    height: 100px;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.login-left {
+  position: absolute; /* Mengunci sebagai latar belakang belakang */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0; /* Hapus padding bawaan sebelumnya */
+  z-index: 1;
+}
+
+.login-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 2;
+}
+
+.login-left-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Styling Logo Brand Pasangin */
+.brand-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-logo .logo-icon {
+  color: #b30000;
+  transform: rotate(45deg);
+}
+
+.brand-logo .logo-highlight {
+  background-color: #b30000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 2px;
+}
+
+/* Teks Besar Kiri bawah */
+.brand-text {
+  max-width: 550px;
+  margin-bottom: 40px;
+  padding-left: 50px;
+}
+
+.brand-text h1 {
+  font-size: 46px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.brand-text p {
+  font-size: 16px;
+  color: #e0e0e0;
+  opacity: 0.9;
+}
+
+
+/* ==========================================
+   SISI KANAN: KARTU FORM LOGIN
+   ========================================== */
+.login-right {
+  position: right;
+  z-index: 3; /* Menaikkan lapisan form agar berada di atas gambar & overlay */
+  background: transparent; /* Ubah dari #11141a menjadi transparan */
+  width: 100%;
+  max-width: 700px;
+  padding: 100px;
+}
+/* Putih Kotak Box Formulir */
+.login-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 50px 45px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.login-header {
+  margin-bottom: 32px;
+}
+
+.login-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Pengaturan Form Field */
+.form-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #b30000;
+}
+
+/* Wrapper Khusus Password & Icon Mata */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Tombol Submit Merah Lebar */
+.btn-login-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #b30000; /* Warna merah gelap sesuai screenshot */
+  color: #ffffff;
+  border: none;
+  border-radius: 30px; /* Melengkung oval sempurna */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s;
+}
+
+.btn-login-submit:hover {
+  background-color: #8a0000;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+.success-msg {
+    background: #dcfce7;
+    color: #166534;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+
+/* Footer Pindah Halaman */
+.login-footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.login-footer a {
+  color: #b30000;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Notifikasi Validasi Alert */
+.msg-box {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.success-msg {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error-msg {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive: Responsif untuk layar Tablet dan Handphone */
+@media (max-width: 992px) {
+  .login-left {
+    display: none; /* Sembunyikan sisi kiri di layar HP agar fokus ke form */
+  }
+  .login-right {
+    flex: 1;
+    background-color: #11141a;
+    padding: 20px;
+  }
+  .login-card {
+    padding: 40px 24px;
+  }
+}

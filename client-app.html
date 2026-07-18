@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasangin Client</title>
+      <link rel="icon" type="image/png" href="assets/logoMini.ico">
+  <link rel="stylesheet" href="appStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+        <a href="#home"> <img src="assets/logoLogin.png" alt="Logo Pasangin" class="logo-image"> </a>
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a href="./index.html#tentang">Tentang</a></li>
+            <li><a href="./index.html#apps">Aplikasi</a></li>
+          </ul>
+        </nav>
+    </div>
+    <button class="btn-download" onclick="navigateTo('https://play.google.com/store/apps/details?id=com.indrayata.pasangin&pcampaignid=web_share')">Download App</button>
+    
+  </header>
+
+  <img src="assets/bgApp.png" alt="Banner" class="banner-image">
+
+  <div class="banner-content">
+      <h1 style="font-size: 70px;">SELAMAT DATANG DI PASANGIN CLIENT</h1>
+      <p>Masuki pengalaman layanan klien yang praktis, anda dapat mengajukan proyek, komunikasikan kebutuhan material, dan pantau pekerjaan tukang secara langsung lewat platform kolaboratif kami.</p>
+  </div>
+
+  <div class="mockup-showcase">
+  <div class="cards-stack">
+      <!-- Kartu 1 (Kiri) -->
+      <div class="mockup-card card-left" onclick="openLightbox('assets/ClientFull1.png')">
+        <img src="assets/Client1.png" alt="Tambah Produk">
+      </div>
+      <!-- Kartu 2 (Tengah) -->
+      <div class="mockup-card card-center" onclick="openLightbox('assets/ClientFull2.png')">
+        <img src="assets/Client2.png" alt="Statistik Penjualan">
+      </div>
+      <!-- Kartu 3 (Kanan) -->
+      <div class="mockup-card card-right" onclick="openLightbox('assets/ClientFull3.jpeg')">
+        <img src="assets/Client3.png" alt="Profil Toko">
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL LIGHTBOX (Popup Full Screen) -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+  </div>
+
+  <script>
+    // Fungsi membuka gambar penuh layar
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      
+      lightboxImg.src = imageSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; /* Mengunci scroll agar rapi */
+    }
+
+    // Fungsi menutup gambar penuh layar
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto'; /* Mengembalikan scroll */
+    }
+
+    // Menutup lewat tombol ESC keyboard
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

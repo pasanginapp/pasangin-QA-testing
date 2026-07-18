@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasangin - Solusi Digital</title>
+  <link rel="icon" type="image/png" href="assets/logoMini.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+        <a href="#home"> <img src="assets/logo.png" alt="Logo Pasangin" class="logo-image"> </a>
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#apps">Aplikasi</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="auth-buttons" id="authButtons">
+      <button class="btn-login" onclick="navigateTo('./login.html')">Login</button>
+      <button class="btn-signup" onclick="navigateTo('./signup.html')">Sign Up</button>
+    </div>
+    <div class="user-profile" id="userProfile" onclick="toggleDropdown()">
+      <!-- Gambar profil di pojok kanan setelah login -->
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Home" alt="Profile" id="profileImg">
+      <span id="profileName">Admin</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner" id="home">
+    <img src="assets/carousel.png" alt="Banner" class="banner-image">
+    <div class="banner-content">
+      <h1>Pasangin Architecture</h1>
+      <p>Kami menghadirkan teknologi inovatif yang membantu membangun rumah impian Anda dengan mudah dan cepat.</p>
+      <a href="#apps" class="btn-primary">Pengenalan Perusahaan</a>
+    </div>
+  </section>
+
+  <section class="stats-section" id="tentang">
+    <!-- Bagian Kiri: Teks & Judul -->
+    <div class="stats-left">
+      <h2>Pasangin Architecture</h2>
+      <p>Pasangin adalah perusahaan konstruksi digital yang menghubungkan klien, tukang, dan suplier dalam satu ekosistem. Dengan teknologi kami, setiap koordinasi proyek menjadi lebih cepat, transparan, dan mudah diawasi dari awal hingga serah terima.</p>
+    </div>
+
+    <!-- Bagian Kanan: Grid Angka Statistik -->
+    <div class="stats-right">
+      <div class="stat-item">
+        <h3>10+</h3>
+        <p>Proyek konstruksi sukses</p>
+      </div>
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Mitra tukang dan suplier</p>
+      </div>
+      <div class="stat-item">
+        <h3>15+</h3>
+        <p>Kota terlayani</p>
+      </div>
+      <div class="stat-item">
+        <h3>250+</h3>
+        <p>Pengguna terhubung</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-section" id="apps">
+    
+    <div class="app-row">
+      <div class="app-left">
+        <h2 class="app-title-top">Pasangin Client</h2>
+        <div class="app-image-container">
+          <img src="assets/clientApp.jpg" alt="Pasangin Client" class="app-img black-border">
+        </div>
+      </div>
+      <div class="app-right">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Koordinasi Cerdas</h4>
+              <p>Platform kami membuat komunikasi antara klien, tukang, dan suplier jadi lancar dan terencana dalam satu tampilan kerja.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Transparansi Proyek</h4>
+              <p>Semua kebutuhan material, jadwal, dan perkembangan pekerjaan dapat dipantau oleh klien dan tim lapangan secara real-time.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Kontrol Mudah</h4>
+              <p>Pengguna klien dapat mengatur anggaran, permintaan tukang, dan pengiriman suplier tanpa repot.</p>
+            </div>
+          </div>
+          <a href="./client-app.html" class="btn-detail">Lihat Detail Aplikasi</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-row row-reverse">
+      <div class="app-left">
+        <h2 class="app-title-top text-right">Pasangin Tukang</h2>
+        <div class="app-image-container">
+          <img src="assets/tukangApp.jpg" alt="Pasangin Tukang" class="app-img black-border">
+        </div>
+      </div>
+      <div class="app-right">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Penugasan Instan</h4>
+              <p>Tukang menerima pekerjaan langsung dari klien dengan detail tugas dan estimasi waktu yang jelas.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Update Progres</h4>
+              <p>Setiap tahap pekerjaan dicatat sehingga semua pihak tahu status proyek tanpa kebingungan.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Pembayaran Terencana</h4>
+              <p>Alur pembayaran tukang dapat dikelola dengan transparan lewat sistem digital kami.</p>
+            </div>
+          </div>
+          <a href="./tukang-app.html" class="btn-detail">Lihat Detail Aplikasi</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-row">
+      <div class="app-left">
+        <h2 class="app-title-top">Pasangin Suplier</h2>
+        <div class="app-image-container">
+          <img src="assets/supApp.jpg" alt="Pasangin Supplier" class="app-img black-border">
+        </div>
+      </div>
+      <div class="app-right">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Ketersediaan Material</h4>
+              <p>Suplier dapat mengelola stok dan menjawab permintaan bahan bangunan secara cepat dan akurat.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Pengiriman Efisien</h4>
+              <p>Pengiriman material terpantau agar tukang dan proyek bisa terus berjalan tanpa hambatan.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-text">
+              <h4>Pesanan Terintegrasi</h4>
+              <p>Koneksi langsung dengan klien dan tukang menjadikan pemesanan bahan lebih cepat dan terstruktur.</p>
+            </div>
+          </div>
+          <a href="./sup-app.html" class="btn-detail">Lihat Detail Aplikasi</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <a class="footer-link" href="./footer.html">© 2026 Pasangin. Semua hak dilindungi.</a>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

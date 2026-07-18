@@ -1,0 +1,74 @@
+/* Mengunci tinggi halaman penuh layar */
+.error-page-body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa; /* Background abu-abu terang yang bersih */
+  font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Kotak Konten Utama */
+.error-container {
+  text-align: center;
+  max-width: 500px;
+  padding: 40px 24px;
+}
+
+/* Desain Angka 404 Besar */
+.error-code {
+  font-size: 140px;
+  font-weight: 900;
+  color: #C20D00; /* Warna merah khas brand Pasangin */
+  line-height: 1;
+  margin: 0 0 10px 0;
+  letter-spacing: -4px;
+  /* Efek bayangan halus */
+  text-shadow: 0 8px 16px rgba(194, 13, 0, 0.1);
+}
+
+/* Judul Pesan */
+.error-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 16px;
+}
+
+/* Deskripsi Teks */
+.error-message {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+/* Tombol Detail (Sudah disesuaikan agar ukurannya fit-content/kecil saja) */
+.btn-detail {
+  background: #C20D00;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-block;
+  width: fit-content; /* Memastikan tombol tidak melar penuh */
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(194, 13, 0, 0.2);
+}
+
+.btn-detail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(194, 13, 0, 0.3);
+}
+
+.btn-detail:active {
+  transform: translateY(0);
+}

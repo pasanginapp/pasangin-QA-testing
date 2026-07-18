@@ -1,0 +1,3 @@
+RewriteEngine On
+
+ErrorDocument 404 /pasangin_qa_test/404.html
